@@ -1,0 +1,43 @@
+
+
+<table mat-table [dataSource]="games" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID. </th>
+      <td mat-cell *matCellDef="let game"> {{game.id}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let game"> {{game.name}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="year">
+      <th mat-header-cell *matHeaderCellDef> Year </th>
+      <td mat-cell *matCellDef="let game"> {{game.year}} </td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="system">
+      <th mat-header-cell *matHeaderCellDef> System </th>
+      <td mat-cell *matCellDef="let game"> {{game.system}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="rating">
+        <th mat-header-cell *matHeaderCellDef> YiRating </th>
+        <td mat-cell *matCellDef="let game"> {{game.YiRating}} </td>
+      </ng-container>
+      <ng-container matColumnDef="detail">
+        <th mat-header-cell *matHeaderCellDef> View Detail </th>
+        <td mat-cell *matCellDef="let game"> 
+            <button mat-flat-button  color="primary" (click)="goToGameDetails(game.id)">View Detail</button>
+        </td>
+       
+      </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+
+

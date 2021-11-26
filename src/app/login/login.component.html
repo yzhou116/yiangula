@@ -1,0 +1,56 @@
+
+
+<div class="main-div">
+    <mat-card _ngcontent-acv-c80="" class="ma-card">
+     
+        <form class="form-horizontal" name="loginForm"  (ngSubmit)="onSubmit()">
+            <mat-form-field  appearance="fill" (ngSubmit)="onSubmit()">
+               
+                <mat-label>User Name</mat-label>
+                <input matInput #input maxlength="10" name="username" [(ngModel)]="userName"  (keydown)="listenUserName($event)"  placeholder="yizhou">
+              
+        
+              </mat-form-field>
+              <br/>
+              <span *ngIf="checkUserName">User Name can not contain space!</span>
+              <br/>
+              <mat-form-field  appearance="fill" (ngSubmit)="onSubmit()">
+              
+                <mat-label>Password</mat-label>
+                <input matInput #input maxlength="12"  name="password"  [(ngModel)]="password" (input)="onPasswordChange($event)" (keydown)="listenPassword($event)"  placeholder="sD4888202!">
+             
+              
+            
+              </mat-form-field>
+              <br/>
+       
+                <span *ngIf="checkPassword">Password can not contain space!</span>
+                <span *ngIf="loginfail">Wrong user name or password</span>
+                <span *ngIf="invalidpassword">Your password does not satisfy my policy</span>
+            
+              
+       
+              <p class="upper" >Password need to contain uppercase</p>
+              <p class="lower">Password need to contain lowercase</p>
+              <p class="special">Password need to contain one special character</p>
+              <p class="eight">Password need to be at least 8 length long</p>
+              <div class="form-group">
+                
+                <button mat-flat-button color="primary" type="submit">Login</button>
+              
+            </div>
+        
+        </form>
+    </mat-card>
+  
+  
+  </div>
+
+
+ 
+
+
+
+
+
+

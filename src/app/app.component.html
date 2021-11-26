@@ -1,0 +1,34 @@
+
+
+<mat-toolbar color="primary" class="navbar">
+<div [routerLink]="['/']">Web422 Angular Assignment</div>
+<div class="nav">
+  <span [routerLink]="['/game']">Game</span>
+<span [routerLink]="['/about']">About</span>
+<span *ngIf="!checkUser.success" [routerLink]="['/login']">Login</span>
+<span *ngIf="checkUser.success" (click)="openDailog()" >Hi, {{checkUser.userName}}</span>
+</div>
+
+
+  </mat-toolbar>
+  <mat-divider></mat-divider>
+
+<router-outlet></router-outlet>
+
+<mat-toolbar class="mfooter"  color="primary">
+  <mat-toolbar-row class="namefooter">
+    <h3>Yi Zhou</h3>
+  </mat-toolbar-row>
+
+  <mat-toolbar-row class="footer" >
+    <span class="webfooter">Web422 Assignment</span>
+    <span class="example-spacer"></span>
+  
+  </mat-toolbar-row>
+
+  <mat-toolbar-row class="footer">
+    <span class="datefooter">Nov 24, 2021</span>
+    <span class="example-spacer"></span>
+  
+  </mat-toolbar-row>
+</mat-toolbar>

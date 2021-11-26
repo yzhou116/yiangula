@@ -1,0 +1,10 @@
+table {
+    width: 100%;
+  }
+  button {
+    margin-left: -15px;
+  }
+  .mat-row:hover .mat-cell {
+    border-color: currentColor;
+  }
+  
